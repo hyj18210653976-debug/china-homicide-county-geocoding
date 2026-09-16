@@ -3,6 +3,20 @@ County-level geocoding, administrative matching, and quality-control workflow fo
 
 # China Homicide County-Level Geocoding
 
+homicide-county-geocoding/
+├── README.md
+├── R/
+│   ├── 01_match_status.R
+│   ├── 02_matching_stage_summary.R
+│   ├── 03_multilocation_killsite_review.R
+│   └── 04_freeze_final_matching.R
+├── data/
+│   └── README.md
+└── output/
+    └── README.md
+
+
+
 ## Overview
 
 This repository documents the geographic data-cleaning and county-level matching procedure used to assign Chinese homicide cases to unique county-level geographic identifiers.
@@ -404,3 +418,47 @@ These data can subsequently be merged with:
 * other meteorological variables;
 
 for downstream DLNM and related regression analyses.
+
+
+# Data
+
+Raw homicide case-level data are not included in this public repository.
+
+The working dataset contains 18,840 homicide records from 2014–2023.
+
+Final geographic matching:
+- Total: 18,840
+- Matched: 18,720
+- Unresolved: 120
+- Matching rate: 99.363057%
+
+The final authoritative county-level identifier is:
+
+`authoritative_id_cp`
+
+Sensitive case-level data are stored separately and are not publicly distributed.
+
+
+
+
+
+# Output
+
+This directory documents the expected outputs of the county-level geocoding workflow.
+
+Recommended outputs include:
+
+- `matching_stage_summary.csv`
+- `multilocation_review.csv`
+- `unresolved_cases.csv`
+- `final_homicide_county_match.csv`
+
+The final analysis dataset should include only records with a non-missing:
+
+`authoritative_id_cp`
+
+Final matched sample:
+- Matched: 18,720
+- Unresolved: 120
+- Matching rate: 99.363057%
+
