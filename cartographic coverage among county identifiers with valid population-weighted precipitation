@@ -1,0 +1,27 @@
+valid_precip_n <- 2849L
+direct_valid_n <- 2822L
+verified_additional_valid <- 11L
+
+final_verified_valid <-
+    direct_valid_n +
+    verified_additional_valid
+
+final_verified_coverage <-
+    100 *
+    final_verified_valid /
+    valid_precip_n
+
+cat(
+    "Final verified mapped valid IDs =",
+    final_verified_valid,
+    "\n"
+)
+
+cat(
+    "FINAL VERIFIED CARTOGRAPHIC COVERAGE =",
+    sprintf(
+        "%.4f%%",
+        final_verified_coverage
+    ),
+    "\n"
+)
